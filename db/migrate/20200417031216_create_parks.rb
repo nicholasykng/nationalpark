@@ -6,6 +6,7 @@ class CreateParks < ActiveRecord::Migration[6.0]
       t.string :activities
       t.string :directions
       t.string :images
+      t.integer :likes
       t.timestamps
     end
   end
