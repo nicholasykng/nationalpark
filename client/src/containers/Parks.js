@@ -3,7 +3,7 @@ import {connect} from 'react-redux'
 import {Route} from 'react-router-dom'
 import {fetchParks} from '../actions/fetchParks'
 import ParksList from "../components/ParksList"
-import ParkShow from ""
+import ParkShow from "./ParkShow"
 
 
 class ParksContainer extends Component {
@@ -17,7 +17,7 @@ class ParksContainer extends Component {
                 <Route exact path={match.url} render={() => (
                     <ParksList parks={this.props.parks} />
                 )}/>
-                <Route path={`${match.url}/:parkId`} component={ParkShow}/>
+                <Route path={`${match.url}/:parkId`} render={routerProps => <ParkShow {...routerProps} parks={this.props.parks} />}/>
             </div>
         )
     }
