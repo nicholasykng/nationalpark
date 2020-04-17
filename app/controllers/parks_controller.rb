@@ -1,12 +1,12 @@
 class ParksController < ApplicationController
     def index
         parks = Park.all
-        render json: parks
+        render json: parks, include: [:comments], except: [:created_at, :updated_at]
     end
 
     def show
         park = Park.find(params[:id])
-        render json: park
+        render json: park, include: [:comments], except: [:created_at, :updated_at]
     end
 
     def new
@@ -16,14 +16,14 @@ class ParksController < ApplicationController
     def create
         park = Park.new(park_params)
         if park.save
-            render json: park
+            render json: park, include: [:comments], except: [:created_at, :updated_at]
         end
     end
 
     def update
         park = Park.find(params[:id])
         if park.update(park_params)
-            render json: park
+            render json: park, include: [:comments], except: [:created_at, :updated_at]
         end
     end
 

@@ -4,5 +4,5 @@ class Park < ApplicationRecord
     validates :description, presence: true
     validates :activities, presence: true
     validates :directions, presence: true
-    validtes :images, presence: true
+    validates :images, presence: true
 end
