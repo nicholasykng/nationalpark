@@ -1,7 +1,9 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
-import {Route, Switch} from 'react-router-dom'
-import {fetchParks} from '../action/fetchParks'
+import {Route} from 'react-router-dom'
+import {fetchParks} from '../actions/fetchParks'
+import ParksList from ""
+import Park from ""
 
 
 class ParksContainer extends Component {
@@ -9,22 +11,24 @@ class ParksContainer extends Component {
         this.props.fetchParks()
     }
     render() {
+        const {match} = this.props
         return (
             <div>
                 <Route exact path={match.url} render={() => (
                     <ParksList parks={this.props.parks} />
                 )}/>
+                <Route path={`${match.url}/:parkId`} render={routerProps => <Park {...routerProps} parks={this.props.parks} />}/>
             </div>
         )
     }
 }
-mapStateToProps = state => {
+const mapStateToProps = state => {
     return {
         parks: state.parks
     }
 }
 
-mapDispatchToProps = dispatch => {
+const mapDispatchToProps = dispatch => {
     return {
         fetchParks: () => dispatch(fetchParks())
     }

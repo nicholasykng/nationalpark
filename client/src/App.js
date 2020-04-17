@@ -12,7 +12,7 @@ function App() {
       <div className="App">
       <NavBar />
       <Route exact path="/" component={Home} />
-      <Route path='/parks' component={Parks} />
+      <Route path='/parks' render={routerProps => <Parks {...routerProps} />} />
       <Route exact path="/new" component={ParksNew} />
       </div>
     </Router>
