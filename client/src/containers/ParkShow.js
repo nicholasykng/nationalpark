@@ -1,19 +1,30 @@
 import React, {Component} from 'react'
+import {connect} from  'react-redux'
+import {fetchPark} from '../actions/index'
 
 class ParkShow extends Component {
+    componentDidMount() {
+        this.props.fetchPark(this.props.match.params.parkId)
+    }
     render() {
-        const {parks, match} = this.props
+        const {park} = this.props
         return (
             <div>
-                <h2>{parks[match.params.parkId + 1].name}</h2>
-                <p>{parks[match.params.parkId + 1].description}</p>
-                <p>{parks[match.params.parkId + 1].activities}</p>
-                <p>{parks[match.params.parkId + 1].directions}</p>
-                <img src={parks[match.params.parkId + 1].images} width="100%" height="100%" alt="pic"/>
+                <h2>{park.name}</h2>
+                <p>{park.description}</p>
+                <p>{park.activities}</p>
+                <p>{park.directions}</p>
+                <img src={park.images} width="100%" height="100%" alt="pic"/>
             </div>
         )
     }
 }
+const mapStateToProps = (state, ownProps) => {
 
-
-export default ParkShow
+    const park = state.parks.find(park => park.id === parseInt(ownProps.match.params.parkId, 10)) || {}
+    return ({
+      park: park
+      
+    })
+  }
+export default connect(mapStateToProps, {fetchPark})(ParkShow)
