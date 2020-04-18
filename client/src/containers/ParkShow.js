@@ -12,8 +12,8 @@ class ParkShow extends Component {
             <div>
                 <h2>{park.name}</h2>
                 <p>{park.description}</p>
-                <p>{park.activities}</p>
-                <p>{park.directions}</p>
+                <p>Activities: {park.activities}</p>
+                <p>Directions: {park.directions}</p>
                 <img src={park.images} width="100%" height="100%" alt="pic"/>
             </div>
         )
