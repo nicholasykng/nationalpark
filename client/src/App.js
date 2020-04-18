@@ -1,6 +1,6 @@
 import React from 'react';
 import NavBar from './components/navBar'
-import {BrowserRouter as Router, Route} from 'react-router-dom'
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 import './App.css';
 import Home from './components/Home'
 import Parks from './containers/Parks'
@@ -12,9 +12,11 @@ function App() {
     <Router>
       <div className="App">
       <NavBar />
+      <Switch>
       <Route exact path="/" component={Home} />
-      <Route path="/parks" render={routerProps => <Parks {...routerProps} />} />
+      <Route path="/parks" component={Parks} />
       <Route path="/parks/:parkId" component={ParkShow} />
+      </Switch>
       </div>
     </Router>
   );

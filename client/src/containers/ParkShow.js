@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import {connect} from  'react-redux'
-import {fetchPark} from '../actions/index'
+import {fetchPark} from '../actions/fetchPark.js'
 
 class ParkShow extends Component {
     componentDidMount() {

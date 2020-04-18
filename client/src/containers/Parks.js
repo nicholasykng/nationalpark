@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
-import {Route} from 'react-router-dom'
-import {fetchParks} from '../actions/index'
+import {Route, Switch} from 'react-router-dom'
+import {fetchParks} from '../actions/fetchParks.js'
 import ParksList from "../components/ParksList"
 import ParkShow from "./ParkShow"
 
@@ -14,10 +14,12 @@ class ParksContainer extends Component {
         const {match, parks} = this.props
         return (
             <div>
+                <Switch>
                 <Route exact path={match.url} render={() => (
                     <ParksList parks={parks} />
                 )}/>
-                <Route path={`${match.url}/:parkId`} render={routerProps => <ParkShow {...routerProps} parks={parks} />}/>
+                <Route path={`${match.url}/:parkId`} component={ParkShow}/>
+                </Switch>
             </div>
         )
     }
