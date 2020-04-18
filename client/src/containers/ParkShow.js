@@ -3,6 +3,7 @@ import {connect} from  'react-redux'
 import {fetchPark} from '../actions/fetchPark.js'
 import {fetchComments} from '../actions/fetchComments'
 import CommentList from '../components/CommentList'
+import CommentNew from '../components/CommentNew'
 
 class ParkShow extends Component {
     componentDidMount() {
@@ -19,6 +20,7 @@ class ParkShow extends Component {
                 <p>Directions: {park.directions}</p>
                 <img src={park.images} width="100%" height="100%" alt="pic"/><br></br>
                 <CommentList comments={comments} />
+                <CommentNew parkId={this.props.match.params.parkId} />
             </div>
         )
     }
