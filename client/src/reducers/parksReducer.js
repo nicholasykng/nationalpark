@@ -6,6 +6,8 @@ const parksReducer = (state = [], action) => {
             return action.parks
         case "FETCH_PARK":
             return action.park
+        case "ADD_PARK":
+            return state.concat(action.park)
         case "REMOVE_PARKS":
             return state.filter(park => park.id !== action.id)
         default:

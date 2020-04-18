@@ -5,7 +5,7 @@ import './App.css';
 import Home from './components/Home'
 import Parks from './containers/Parks'
 import ParkShow from './containers/ParkShow'
-//import ParkNew from './containers/ParkNew'<Route exact path="/new" component={ParkNew} />
+import ParkNew from './containers/ParkNew'
 
 function App() {
   return (
@@ -16,6 +16,7 @@ function App() {
       <Route exact path="/" component={Home} />
       <Route exact path="/parks" component={Parks} />
       <Route path="/parks/:parkId" component={ParkShow} />
+      <Route exact path="/new" component={ParkNew} />
       </Switch>
       </div>
     </Router>
