@@ -1,5 +1,7 @@
 import React, {Component} from 'react'
 import {Link} from 'react-router-dom'
+import {Button} from 'react-bootstrap'
+
 class ParkCard extends Component {
     render() {
         const {park} = this.props
@@ -9,10 +11,9 @@ class ParkCard extends Component {
                 <img src={park.images} width="125" height="100" alt="pic" />
                 <br/>
                 <p>{park.description}</p>
-                <br />
                 <Link key={park.id} to={`/parks/${park.id}`} >
-                    <button>More Information</button>
-                </Link>
+                    <Button variant="info">More Information</Button>
+                </Link><br></br><br></br>
             </div>
         )
     }

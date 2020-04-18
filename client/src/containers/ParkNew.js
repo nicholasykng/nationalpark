@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import {createPark} from '../actions/createPark'
 import {connect} from 'react-redux'
-import {FormControl, FormGroup, FormLabel} from 'react-bootstrap'
+import {FormControl, FormGroup, FormLabel, Button} from 'react-bootstrap'
 
 class ParkNew extends Component {
     state = {
@@ -42,7 +42,7 @@ class ParkNew extends Component {
                     <FormControl  type="textarea" name="directions" value={this.state.directions} onChange={this.handleOnChange} /><br></br>
                     <FormLabel>Image URL:</FormLabel>
                     <FormControl  type="text" name="images" value={this.state.images} onChange={this.handleOnChange} /><br></br>
-                    <FormControl  type="submit"></FormControl >
+                    <Button variant="outline-success" type="submit">Submit</Button>
                     </FormGroup>
                 </form>
             </div>

@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import {createComment} from '../actions/createComment'
-import {FormControl, FormGroup, FormLabel} from 'react-bootstrap'
+import {FormControl, FormGroup, FormLabel, Button} from 'react-bootstrap'
 
 class CommentNew extends Component {
     state = {
@@ -32,7 +32,7 @@ class CommentNew extends Component {
                         <FormControl type="text" value={this.state.content} name="content" onChange={this.handleOnChange} /><br></br>
                         <FormLabel>Your Name:</FormLabel>
                         <FormControl type="text" value={this.state.commenter} name="commenter" onChange={this.handleOnChange} /><br></br>
-                        <FormControl type="submit"/>
+                        <Button variant="outline-success" type="submit">Submit</Button>
                     </FormGroup>
                 </form>
             </div>
