@@ -1,6 +1,7 @@
 class CommentsController < ApplicationController
     def index
-        comments = Comment.all
+        park = Park.find_by(id: params[:park_id])
+        comments = park.comments
         render json: comments, except: [:created_at, :updated_at]
     end
 
@@ -10,6 +11,7 @@ class CommentsController < ApplicationController
     end
 
     def create
+        park = Park.find_by(id: params[:park_id])
         comment = Comment.new(comment_params)
         if comment.save
             render json: comment, except: [:created_at, :updated_at]
