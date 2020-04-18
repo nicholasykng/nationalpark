@@ -5,6 +5,7 @@ import {fetchComments} from '../actions/fetchComments'
 import CommentList from '../components/CommentList'
 import CommentNew from '../components/CommentNew'
 
+
 class ParkShow extends Component {
     componentDidMount() {
         this.props.fetchPark(this.props.match.params.parkId)
@@ -18,7 +19,7 @@ class ParkShow extends Component {
                 <p>{park.description}</p>
                 <p>Activities: {park.activities}</p>
                 <p>Directions: {park.directions}</p>
-                <img src={park.images} width="100%" height="100%" alt="pic"/><br></br>
+                <img src={park.images} width="75%" height="75%" alt="pic"/><br></br>
                 <CommentList comments={comments} />
                 <CommentNew parkId={this.props.match.params.parkId} />
             </div>

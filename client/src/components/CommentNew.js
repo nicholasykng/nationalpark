@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import {createComment} from '../actions/createComment'
+import {FormControl, FormGroup, FormLabel} from 'react-bootstrap'
 
 class CommentNew extends Component {
     state = {
@@ -26,11 +27,13 @@ class CommentNew extends Component {
             <div className="comment-new-form">
                 <h3>Add Comment:</h3>
                 <form onSubmit={this.handleOnSubmit}>
-                <label>Comment:</label>
-                <input type="text" value={this.state.content} name="content" onChange={this.handleOnChange} /><br></br>
-                <label>Your Name:</label>
-                <input type="text" value={this.state.commenter} name="commenter" onChange={this.handleOnChange} /><br></br>
-                <input type="submit"></input>
+                    <FormGroup controlId="basic-form">
+                        <FormLabel>Comment:</FormLabel>
+                        <FormControl type="text" value={this.state.content} name="content" onChange={this.handleOnChange} /><br></br>
+                        <FormLabel>Your Name:</FormLabel>
+                        <FormControl type="text" value={this.state.commenter} name="commenter" onChange={this.handleOnChange} /><br></br>
+                        <FormControl type="submit"/>
+                    </FormGroup>
                 </form>
             </div>
         )
