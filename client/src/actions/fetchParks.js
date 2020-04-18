@@ -1,11 +1,15 @@
 export const fetchParks = () => {
-    return (dispatch) => {
+    return dispatch => {
         dispatch({type: "LOADING_PARKS"})
-        fetch('http://localhost:3000/parks')
-       .then(resp => resp.json())
-       .then(data => {
-           dispatch({type: "ADD_PARKS", parks: data})
-       })
-            
+        return fetch('http://localhost:3000/parks')
+        .then(response => response.json())
+        .then(park => dispatch(setParks(park)))
+         
     }
 }
+const setParks = parks => {
+    return {
+      type: 'FETCH_PARKS',
+      parks
+    }
+  }

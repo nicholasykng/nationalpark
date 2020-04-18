@@ -11,13 +11,13 @@ class ParksContainer extends Component {
         this.props.fetchParks()
     }
     render() {
-        const {match} = this.props
+        const {match, parks} = this.props
         return (
             <div>
                 <Route exact path={match.url} render={() => (
-                    <ParksList parks={this.props.parks} />
+                    <ParksList parks={parks} />
                 )}/>
-                <Route path={`${match.url}/:parkId`} render={routerProps => <ParkShow {...routerProps} parks={this.props.parks} />}/>
+                <Route path={`${match.url}/:parkId`} render={routerProps => <ParkShow {...routerProps} parks={parks} />}/>
             </div>
         )
     }
