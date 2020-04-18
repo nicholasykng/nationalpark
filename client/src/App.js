@@ -14,7 +14,7 @@ function App() {
       <NavBar />
       <Switch>
       <Route exact path="/" component={Home} />
-      <Route path="/parks" component={Parks} />
+      <Route exact path="/parks" component={Parks} />
       <Route path="/parks/:parkId" component={ParkShow} />
       </Switch>
       </div>
