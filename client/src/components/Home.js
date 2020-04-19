@@ -44,7 +44,7 @@ const Home = () => {
                 <Carousel.Item>
                     <img
                     className="d-block w-100"
-                    src="https://www.wthr.com/sites/default/files/styles/article_image/public/2020/04/14/place_yosemite_at_sunrise_getty_bartfett_web.jpg?itok=rYeUKauZ"
+                    src="https://redwoodsinyosemite.com/wp-content/uploads/2019/06/Wawona-Tunnel-Page-Banner-Image.jpeg"
                     alt="Fourth slide"/>
 
                     <Carousel.Caption>
@@ -54,7 +54,7 @@ const Home = () => {
                 <Carousel.Item>
                     <img
                     className="d-block w-100"
-                    src="https://dynaimage.cdn.cnn.com/cnn/c_fill,g_auto,w_1200,h_675,ar_16:9/https%3A%2F%2Fcdn.cnn.com%2Fcnnnext%2Fdam%2Fassets%2F200108040342-glacier-national-park.jpg"
+                    src="https://static.photocdn.pt/images/articles/2018/06/28/articles/2017_8/what_to_photograph_in_glacier_national_park.jpg"
                     alt="Fifth slide"/>
 
                     <Carousel.Caption>
@@ -84,7 +84,7 @@ const Home = () => {
                 <Carousel.Item>
                     <img
                     className="d-block w-100"
-                    src="https://res.cloudinary.com/simpleview/image/upload/v1476808509/clients/denver/rocky-mountain-national-park-aglow_763256ea-f0ae-5102-065b089a4c479241.jpg"
+                    src="https://images.theoutbound.com/uploads/1458603222394/dxkyu7chhtqrh2g7/7b5f3b82f0aeb5c36ac6dcf8fa46bb0d?&fit=crop&w=970&h=550&auto=format&dpr=2&q=60"
                     alt="8 slide"/>
 
                     <Carousel.Caption>
@@ -94,7 +94,7 @@ const Home = () => {
                 <Carousel.Item>
                     <img
                     className="d-block w-100"
-                    src="https://www.nationalgeographic.com/content/dam/travel/2019-digital/grand-teton-national-park-update/grand-teton-national-park-3.jpg"
+                    src="https://www.nppemasterclass.com/wp-content/uploads/2017/10/Grand-Teton.jpg"
                     alt="9 slide"/>
 
                     <Carousel.Caption>
