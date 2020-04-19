@@ -1,5 +1,6 @@
 export const likePark = (park) => {
-    const updatePark = Object.assign(...park, {likes: park.likes + 1})
+    console.log(park)
+    const updatePark = {...park, likes: park.likes + 1}
     return dispatch => {
         return fetch(`http://localhost:3000/parks/${park.id}`, {
             method: "PUT",
