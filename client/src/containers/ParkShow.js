@@ -4,12 +4,16 @@ import {fetchPark} from '../actions/fetchPark.js'
 import {fetchComments} from '../actions/fetchComments'
 import CommentList from '../components/CommentList'
 import CommentNew from '../components/CommentNew'
-
+import LikeButton from '../components/LikeButton'
+import {likePark} from '../actions/likePark'
 
 class ParkShow extends Component {
     componentDidMount() {
         this.props.fetchPark(this.props.match.params.parkId)
         this.props.fetchComments(this.props.match.params.parkId)
+    }
+    handleOnClick = () => {
+        this.props.likePark(this.props.park)
     }
     render() {
         const {park, comments} = this.props
@@ -20,8 +24,13 @@ class ParkShow extends Component {
                 <p>Activities: {park.activities}</p>
                 <p>Directions: {park.directions}</p>
                 <img src={park.images} width="75%" height="75%" alt="pic"/><br></br>
-                <CommentList comments={comments} />
-                <CommentNew parkId={this.props.match.params.parkId} />
+                <div className="likes">
+                    <LikeButton park={park} likePark={this.handleOnClick} />
+                </div>
+                <div className="comments">
+                    <CommentList comments={comments} />
+                    <CommentNew parkId={this.props.match.params.parkId} />
+                </div>
             </div>
         )
     }
@@ -35,4 +44,4 @@ const mapStateToProps = (state, ownProps) => {
       
     })
   }
-export default connect(mapStateToProps, {fetchPark, fetchComments})(ParkShow)
+export default connect(mapStateToProps, {fetchPark, fetchComments, likePark})(ParkShow)
