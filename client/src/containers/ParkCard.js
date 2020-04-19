@@ -7,14 +7,15 @@ class ParkCard extends Component {
         const {park} = this.props
         return(
             <div className="park-card">
-                <h4>{park.name}</h4>
-                <img src={park.images} width="125" height="100" alt="pic" />
-                <br/>
-                <p>{park.description}</p>
-                <Link key={park.id} to={`/parks/${park.id}`} >
-                    <Button variant="info">More Information</Button>
-                </Link><br></br><br></br>
-            </div>
+            <h4>{park.name}</h4>
+            <img src={park.images} width="50%" height="50%" alt="pic" />
+            <br/>
+            <p>{park.description}</p>
+            <Link key={park.id} to={`/parks/${park.id}`} >
+                <Button variant="info">More Information</Button><br></br>
+            </Link><br></br>
+        </div>
+            
         )
     }
 }

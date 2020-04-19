@@ -1,5 +1,6 @@
 import React from 'react'
 import ParkCard from "../containers/ParkCard"
+import {Button} from 'react-bootstrap'
 
 class ParksList extends React.Component {
     state = {
@@ -25,9 +26,8 @@ class ParksList extends React.Component {
     render() {
         return (
             <div>
-                <h1>List of Top National Parks</h1>
-                <h4>Now Displaying {this.state.sorted ? "Most To Least Likes" : "Least To Most Likes"}</h4>
-                <button className="sort-like" onClick={this.handleSort}>{this.state.sorted ? "Sort Least to Most Likes" : "Sort Most to Least Likes"}</button>
+                <h1>List of Top National Parks From {this.state.sorted ? "Most To Least Likes" : "Least To Most Likes"}</h1>
+                <Button variant="outline-dark" className="sort-like" onClick={this.handleSort}>{this.state.sorted ? "Sort Least to Most Likes" : "Sort Most to Least Likes"}</Button>
                 {this.renderParks()}
             </div>
         )
