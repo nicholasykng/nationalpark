@@ -17,14 +17,8 @@ class ParkNew extends Component {
     handleOnSubmit = event => {
         event.preventDefault()
         this.props.createPark(this.state)
-        this.setState({
-            name: "",
-            description: "",
-            activities: "",
-            directions: "",
-            images: ""
-        })
-        this.props.history.push('/parks')
+        this.props.history.push("/parks")
+
     }
     render () {
         return (
