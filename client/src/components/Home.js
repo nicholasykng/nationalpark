@@ -15,6 +15,8 @@ const Home = () => {
                 <Carousel.Item>
                     <img
                     className="d-block w-100"
+                    width="900px"
+                    height="650px"
                     src="https://rt-homepage.roadtrippers.com/wp-content/uploads/2020/03/arches-hero-1920x1080.jpg"
                     alt="First slide"/>
                     <Carousel.Caption>
@@ -24,6 +26,8 @@ const Home = () => {
                 <Carousel.Item>
                     <img
                     className="d-block w-100"
+                    width="900px"
+                    height="650px"
                     src="https://www.nationalparks.org/sites/default/files/yellowstone-header.jpg"
                     alt="Second slide"/>
 
@@ -34,6 +38,8 @@ const Home = () => {
                 <Carousel.Item>
                     <img
                     className="d-block w-100"
+                    width="900px"
+                    height="650px"
                     src="https://www.rei.com/blog/wp-content/uploads/2018/05/Hawaii-Volcanoes-National-Park_1.jpg"
                     alt="Third slide"/>
 
@@ -44,6 +50,8 @@ const Home = () => {
                 <Carousel.Item>
                     <img
                     className="d-block w-100"
+                    width="900px"
+                    height="650px"
                     src="https://redwoodsinyosemite.com/wp-content/uploads/2019/06/Wawona-Tunnel-Page-Banner-Image.jpeg"
                     alt="Fourth slide"/>
 
@@ -54,6 +62,8 @@ const Home = () => {
                 <Carousel.Item>
                     <img
                     className="d-block w-100"
+                    width="900px"
+                    height="650px"
                     src="https://static.photocdn.pt/images/articles/2018/06/28/articles/2017_8/what_to_photograph_in_glacier_national_park.jpg"
                     alt="Fifth slide"/>
 
@@ -64,6 +74,8 @@ const Home = () => {
                 <Carousel.Item>
                     <img
                     className="d-block w-100"
+                    width="900px"
+                    height="650px"
                     src="https://media.deseretdigital.com/file/2576c93235?type=jpeg&quality=55&c=15&a=4379240d"
                     alt="Sixth slide"/>
 
@@ -74,6 +86,8 @@ const Home = () => {
                 <Carousel.Item>
                     <img
                     className="d-block w-100"
+                    width="900px"
+                    height="650px"
                     src="https://media.deseretdigital.com/file/aa89988589?type=jpeg&quality=55&c=15&a=4379240d"
                     alt="Seventh slide"/>
 
@@ -84,6 +98,8 @@ const Home = () => {
                 <Carousel.Item>
                     <img
                     className="d-block w-100"
+                    width="900px"
+                    height="650px"
                     src="https://images.theoutbound.com/uploads/1458603222394/dxkyu7chhtqrh2g7/7b5f3b82f0aeb5c36ac6dcf8fa46bb0d?&fit=crop&w=970&h=550&auto=format&dpr=2&q=60"
                     alt="8 slide"/>
 
@@ -94,6 +110,8 @@ const Home = () => {
                 <Carousel.Item>
                     <img
                     className="d-block w-100"
+                    width="900px"
+                    height="650px"
                     src="https://www.nppemasterclass.com/wp-content/uploads/2017/10/Grand-Teton.jpg"
                     alt="9 slide"/>
 
@@ -104,6 +122,8 @@ const Home = () => {
                 <Carousel.Item>
                     <img
                     className="d-block w-100"
+                    width="900px"
+                    height="650px"
                     src="https://s27363.pcdn.co/wp-content/uploads/2019/11/Acadia-National-Park-Guide.jpg.optimal.jpg"
                     alt="10 slide"/>
 

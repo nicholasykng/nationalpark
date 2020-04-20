@@ -7,6 +7,7 @@ export const fetchParks = () => {
          
     }
 }
+
 const setParks = parks => {
     return {
       type: 'FETCH_PARKS',

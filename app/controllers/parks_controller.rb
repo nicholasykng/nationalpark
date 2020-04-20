@@ -32,14 +32,9 @@ class ParksController < ApplicationController
         park.destroy
     end
 
-
-
     private
     def park_params
         params.require(:park).permit(:name, :description, :activities, :directions, :images, :likes)
     end
-
-
-
 
 end

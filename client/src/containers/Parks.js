@@ -5,7 +5,6 @@ import {fetchParks} from '../actions/fetchParks.js'
 import ParksList from "../components/ParksList"
 import ParkShow from "./ParkShow"
 
-
 class ParksContainer extends Component {
     componentDidMount() {
         this.props.fetchParks()

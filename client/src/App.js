@@ -11,15 +11,15 @@ function App() {
   return (
     <Router>
       <div className="App">
-      <NavBar />
-      <Switch>
-      <Route exact path="/" component={Home} />
-      <Route exact path="/parks" component={Parks} />
-      <Route path="/parks/:parkId" component={ParkShow} />
-      <Route exact path="/new" component={ParkNew} />
-      </Switch>
-      </div>
-    </Router>
+        <NavBar />
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route exact path="/parks" component={Parks} />
+          <Route path="/parks/:parkId" component={ParkShow} />
+          <Route exact path="/new" component={ParkNew} />
+        </Switch>
+        </div>
+      </Router>
   );
 }
 

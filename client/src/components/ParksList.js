@@ -6,6 +6,7 @@ class ParksList extends React.Component {
     state = {
         sorted: true
     }
+
     renderParks = () => {
         const defaultSort = this.state.sorted
         this.props.parks.sort(function(a,b) {
@@ -17,6 +18,7 @@ class ParksList extends React.Component {
         })
         return this.props.parks.map(park => <ParkCard key={park.id} park={park} />)
     } 
+    
     handleSort = () => {
         this.setState({
             sorted: !this.state.sorted

@@ -29,7 +29,7 @@ class ParkNew extends Component {
     render () {
         return (
             <div className="Add-New-Park">
-                <h4>Add A National Park</h4>
+                <h1>Add A National Park</h1>
                 <form onSubmit={this.handleOnSubmit}>
                     <FormGroup>
                     <FormLabel>National Park Name:</FormLabel>

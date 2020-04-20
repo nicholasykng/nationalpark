@@ -1,5 +1,4 @@
 export const likePark = (park) => {
-    console.log(park)
     const updatePark = {...park, likes: park.likes + 1}
     return dispatch => {
         return fetch(`http://localhost:3000/parks/${park.id}`, {

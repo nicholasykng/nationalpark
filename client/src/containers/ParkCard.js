@@ -8,7 +8,7 @@ class ParkCard extends Component {
         return(
             <div className="park-card">
             <h4>{park.name}</h4>
-            <img src={park.images} width="50%" height="50%" alt="pic" />
+            <img src={park.images} width="900px" height="500px" alt="pic" />
             <br/>
             <p>{park.description}</p>
             <Link key={park.id} to={`/parks/${park.id}`} >

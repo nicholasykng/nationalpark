@@ -19,11 +19,11 @@ class ParkShow extends Component {
         const {park, comments} = this.props
         return (
             <div>
-                <h2>{park.name}</h2>
+                <h1>{park.name}</h1>
                 <p>{park.description}</p>
                 <p>Activities: {park.activities}</p>
                 <p>Directions: {park.directions}</p>
-                <img src={park.images} width="75%" height="75%" alt="pic"/><br></br>
+                <img src={park.images} width="900px" height="500px" alt="pic"/><br></br>
                 <div className="likes">
                     <LikeButton park={park} likePark={this.handleOnClick} />
                 </div>
@@ -36,7 +36,6 @@ class ParkShow extends Component {
     }
 }
 const mapStateToProps = (state, ownProps) => {
-
     const park = state.parks.find(park => park.id === parseInt(ownProps.match.params.parkId, 10)) || {}
     return ({
       park: park,
