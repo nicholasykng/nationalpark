@@ -6,6 +6,8 @@ import CommentList from '../components/CommentList'
 import CommentNew from '../components/CommentNew'
 import LikeButton from '../components/LikeButton'
 import {likePark} from '../actions/likePark'
+import {Button} from 'react-bootstrap'
+import {deletePark} from '../actions/deletePark'
 
 class ParkShow extends Component {
     componentDidMount() {
@@ -16,7 +18,7 @@ class ParkShow extends Component {
         this.props.likePark(this.props.park)
     }
     render() {
-        const {park, comments} = this.props
+        const {park, comments, history, deletePark} = this.props
         return (
             <div>
                 <h1>{park.name}</h1>
@@ -31,6 +33,9 @@ class ParkShow extends Component {
                     <CommentList comments={comments} />
                     <CommentNew parkId={this.props.match.params.parkId} />
                 </div>
+                <div className="delete-park">
+                    <Button onClick={()=> deletePark(park.id, history)} >Delete Park</Button>
+                </div>
             </div>
         )
     }
@@ -43,4 +48,4 @@ const mapStateToProps = (state, ownProps) => {
       
     })
   }
-export default connect(mapStateToProps, {fetchPark, fetchComments, likePark})(ParkShow)
+export default connect(mapStateToProps, {fetchPark, fetchComments, likePark, deletePark})(ParkShow)
