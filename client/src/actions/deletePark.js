@@ -10,9 +10,9 @@ export const deletePark = (parkId, routerHistory) => {
     }
 }
 
-const removePark = park => {
+const removePark = id => {
     return {
         type: "REMOVE_PARK",
-        park
+        id
     }
 }

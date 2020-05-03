@@ -25,16 +25,16 @@ class ParkShow extends Component {
                 <p>{park.description}</p>
                 <p>Activities: {park.activities}</p>
                 <p>Directions: {park.directions}</p>
-                <img src={park.images} width="900px" height="500px" alt="pic"/><br></br>
+                <img src={park.images} width="900px" height="500px" alt="pic"/><br></br><br></br>
                 <div className="likes">
                     <LikeButton park={park} likePark={this.handleOnClick} />
-                </div>
+                </div><br></br>
                 <div className="comments">
                     <CommentList comments={comments} />
                     <CommentNew parkId={this.props.match.params.parkId} />
                 </div>
                 <div className="delete-park">
-                    <Button onClick={()=> deletePark(park.id, history)} >Delete Park</Button>
+                    <Button onClick={()=> deletePark(park.id, history)}>Delete Park</Button>
                 </div>
             </div>
         )
