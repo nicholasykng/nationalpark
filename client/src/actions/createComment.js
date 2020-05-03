@@ -1,6 +1,6 @@
 export const createComment = (comment) => {
     return dispatch => {
-        return fetch(`http://localhost:3000/parks/${comment.parkId}/comments`, {
+        return fetch(`http://localhost:3000/parks/${comment.park_id}/comments`, {
             method: "POST",
             headers: {
                 "Content-Type": 'application/json'
