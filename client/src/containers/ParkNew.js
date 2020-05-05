@@ -14,7 +14,7 @@ class ParkNew extends Component {
     handleOnChange = event => {
         this.setState({[event.target.name]: event.target.value})
     }
-    handleOnSubmit = event => {
+    handleOnSubmit = event => { 
         event.preventDefault()
         this.props.createPark(this.state)
         this.props.history.push("/parks")
