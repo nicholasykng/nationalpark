@@ -1,27 +1,59 @@
-import React from 'react'
+import React, {Component} from 'react'
+import {FormControl, FormGroup, FormLabel} from 'react-bootstrap'
+import ParkCard from "../containers/ParkCard"
+import {connect} from 'react-redux'
+import {fetchParks} from '../actions/fetchParks.js'
 
-class ParkSearch extends React.component {
+class ParkSearch extends Component {
     state = {
-        searchterm: ""
+        filtered: []
     }
-    handleOnChange = event => {
+    componentDidMount() {
+        this.props.fetchParks()
         this.setState({
-            searchterm: event.target.value
+            filtered: this.props.parks
         })
     }
-    handleOnSubmit = event => {
-        event.preventDefault()
-        this.props.search(this.state.searchterm)
+    renderParks = () => {
+        return this.state.filtered.map(park => <ParkCard key={park.id} park={park} />)
+    } 
+    handleOnChange = event => {
+        let currentPark = []
+        let newParkList = []
+        if (event.target.value !== "") {
+            currentPark = this.props.parks
+            newParkList = currentPark.filter(park => {
+                const lowercaseparkname = park.name.toLowerCase()
+                let filterpark = event.target.value.toLowerCase()
+                return lowercaseparkname.includes(filterpark)
+            })
+        } else {
+            newParkList = this.props.parks
+        }
+        this.setState({
+            filtered: newParkList
+        })
     }
     render() {
         return (
-            <div className="search">
-                <form onSubmit={this.handleOnSubmit}>
-                    <input type="text" name="searchterm" value={this.state.searchterm} onChange={this.handleOnChange} />
-                    <input type="submit"></input>
-                </form>
+            <div>
+                <FormGroup>
+                    <FormLabel>Search For A National Park:</FormLabel>
+                    <FormControl type="text" name="searchterm" onChange={this.handleOnChange} />
+                </FormGroup>
+                {this.renderParks()}
             </div>
         )
     }
 }
-export default connect(null, {searchpark})(ParkSearch)
+const mapStateToProps = state => {
+    return {
+        parks: state.parks
+    }
+}
+const mapDispatchToProps = dispatch => {
+    return {
+        fetchParks: () => dispatch(fetchParks())
+    }
+}
+export default connect(mapStateToProps, mapDispatchToProps)(ParkSearch)

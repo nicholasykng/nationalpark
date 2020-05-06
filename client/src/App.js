@@ -6,6 +6,7 @@ import Home from './components/Home'
 import Parks from './containers/Parks'
 import ParkShow from './containers/ParkShow'
 import ParkNew from './containers/ParkNew'
+import ParkSearch from './components/parksearch.js'
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route exact path="/new" component={ParkNew} />
           <Route exact path="/parks" component={Parks} />
           <Route path="/parks/:parkId" component={ParkShow} />
+          <Route exact path="/search" component={ParkSearch} />
         </Switch>
         </div>
       </Router>
