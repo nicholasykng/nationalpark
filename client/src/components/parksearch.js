@@ -10,26 +10,23 @@ class ParkSearch extends Component {
     }
     componentDidMount() {
         this.props.fetchParks()
-        this.setState({
-            filtered: this.props.parks
-        })
     }
     renderParks = () => {
-        return this.state.filtered.map(park => <ParkCard key={park.id} park={park} />)
+        if (this.state.filtered.length === 0) {
+            return this.props.parks.map(park => <ParkCard key={park.id} park={park} />)
+            }
+        else  {
+            return this.state.filtered.map(park => <ParkCard key={park.id} park={park} />) 
+        }
+
     } 
     handleOnChange = event => {
-        let currentPark = []
-        let newParkList = []
-        if (event.target.value !== "") {
-            currentPark = this.props.parks
-            newParkList = currentPark.filter(park => {
+            const newParkList = this.props.parks.filter(park => {
                 const lowercaseparkname = park.name.toLowerCase()
                 let filterpark = event.target.value.toLowerCase()
                 return lowercaseparkname.includes(filterpark)
             })
-        } else {
-            newParkList = this.props.parks
-        }
+       
         this.setState({
             filtered: newParkList
         })
