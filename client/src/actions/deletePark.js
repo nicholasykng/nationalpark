@@ -1,6 +1,6 @@
 export const deletePark = (parkId, routerHistory) => {
     return dispatch => {
-        return fetch(`http://localhost:3000/parks/${parkId}`, {
+        return fetch(`https://national-park.herokuapp.com/parks/${parkId}`, {
             method: "DELETE",
         })
         .then(response => {

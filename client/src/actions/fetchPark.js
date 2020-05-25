@@ -1,6 +1,6 @@
 export const fetchPark = (parkId) => {
     return dispatch => {
-      return fetch(`http://localhost:3000/parks/${parkId}`)
+      return fetch(`https://national-park.herokuapp.com/parks/${parkId}`)
       .then(response => response.json())
       .then(park => {
         dispatch(setPark([park]))

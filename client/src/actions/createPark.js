@@ -1,6 +1,6 @@
 export const createPark = (park) => {
     return dispatch => {
-        return fetch('http://localhost:3000/parks', {
+        return fetch('https://national-park.herokuapp.com/parks', {
             method: 'POST',
             headers: {
                 "Content-Type": 'application/json'

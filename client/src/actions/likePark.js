@@ -1,7 +1,7 @@
 export const likePark = (park) => {
     const updatePark = {...park, likes: park.likes + 1}
     return dispatch => {
-        return fetch(`http://localhost:3000/parks/${park.id}`, {
+        return fetch(`https://national-park.herokuapp.com/parks/${park.id}`, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json"
