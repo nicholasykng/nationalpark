@@ -1,2 +1,3 @@
-web: bundle exec rails s -p 3000
-web: cd client && npm start
+web: bundle exec rails server -p $PORT
+release: bundle exec rake db:migrate
+release: bundle exec rake db:seed
